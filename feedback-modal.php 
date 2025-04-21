@@ -1,0 +1,20 @@
+<?php
+/**
+ * Plugin Deactivation Feedback Modal
+ */
+
+defined( 'ABSPATH' ) || exit;
+
+function pdfb_enqueue_feedback_assets( $hook ) {
+    if ( 'plugins.php' !== $hook ) return;
+
+    wp_enqueue_script( 'pdfb-feedback', plugin_dir_url( __FILE__ ) . 'assets/feedback.js', [ 'jquery' ], '1.0', true );
+    wp_enqueue_style( 'pdfb-feedback-style', plugin_dir_url( __FILE__ ) . 'assets/feedback.css' );
+
+    add_action( 'admin_footer', 'pdfb_render_feedback_modal' );
+}
+add_action( 'admin_enqueue_scripts', 'pdfb_enqueue_feedback_assets' );
+
+function pdfb_render_feedback_modal() {
+    include __DIR__ . '/views/form.php';
+}
