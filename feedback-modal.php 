@@ -10,7 +10,6 @@ function pdfb_enqueue_feedback_assets( $hook ) {
 
     wp_enqueue_script( 'pdfb-feedback', plugin_dir_url( __FILE__ ) . 'assets/feedback.js', [ 'jquery' ], '1.0', true );
     wp_enqueue_style( 'pdfb-feedback-style', plugin_dir_url( __FILE__ ) . 'assets/feedback.css' );
-
     add_action( 'admin_footer', 'pdfb_render_feedback_modal' );
 }
 add_action( 'admin_enqueue_scripts', 'pdfb_enqueue_feedback_assets' );

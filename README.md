@@ -13,16 +13,17 @@ A simple, reusable WordPress module that adds a feedback popup when users deacti
 1. Clone or download this repository.
 2. Drop the `plugin-deactivation-feedback/` folder into your plugin's directory.
 3. Include the main file in your plugin:
-```
+
+```php
 require_once plugin_dir_path( __FILE__ ) . 'plugin-deactivation-feedback/feedback-modal.php';
 ```
-4. Update the plugin slug in `feedback.js` to match your plugin filename.
+4. Update the plugin slug in `feedback.js` to match your plugin’s filename.
 
 
 ## Usage
-- The modal will appear when a user clicks ** Deactivate ** on your plugin in the WordPress Plugins list.
-- The form can be edited in `views/form.php`.
-- Optional: Hook into the feedback data via AJAX or log it in your plugin for analysis.
+- The modal appears when a user clicks **Deactivate** on your plugin in the Plugins list.
+- Edit the modal HTML in `views/form.php`.
+- Customize behavior and styles as needed.
 
 ## Capturing Feedback
 You can process the feedback using WordPress AJAX or send it to a third-party service.
@@ -79,18 +80,20 @@ $('#pdfb-submit-feedback').on('click', function () {
         }
     });
 });
-
 ```
 
-📌 ** Note for Google Forms:** Use `entry.123456` as the field key, and use `application/x-www-form-urlencoded` instead of JSON for compatibility., not JSON.
+> 📌 **Note for Google Forms:** Use `entry.123456` as the field key, and use `application/x-www-form-urlencoded` instead of JSON for compatibility.
 
 ## Customize
-- Change the question, layout, or styling in `form.php` and `feedback.css`.
-- Hook the feedback form to your server with custom JS or WordPress AJAX.
-- Add more fields like dropdowns, checkboxes, or email input if needed.
+- Edit text, layout, and fields in `views/form.php`
+- Style the modal in `feedback.css`
+- Extend with dropdowns, reasons, or emails
+- Add logging or routing logic to suit your plugin needs
 
 ## Contributing
 Feel free to fork, tweak, and improve this. PRs welcome.
 
 ## License
 MIT - Do whatever you want, just don't blame me if it breaks.
+
+**💡 Collect feedback. Learn why users leave. Make your plugin better.**

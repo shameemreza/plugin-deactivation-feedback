@@ -1,0 +1,54 @@
+#pdfb-feedback-modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.pdfb-modal-content {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    font-family: "Helvetica Neue", sans-serif;
+}
+
+#pdfb-feedback-text {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+#pdfb-submit-feedback,
+.pdfb-modal-cancel {
+    margin-top: 20px;
+    padding: 10px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#pdfb-submit-feedback {
+    background-color: #2271b1;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.pdfb-modal-cancel {
+    background-color: #f0f0f0;
+}
+
+#pdfb-feedback-modal,
+.pdfb-modal-content {
+    transition: all 0.2s ease-in-out;
+}
